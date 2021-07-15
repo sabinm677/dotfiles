@@ -11,7 +11,8 @@ fi
 
 # export PS1="\w \$GAP\$ "
 
-export PS1="\[$bldgrn\]\w\[$txtrst\] \$GAP\$ " 
+# export PS1="\[$bldgrn\]\w\[$txtrst\] \$GAP\$ " 
+export PS1="\d \t \[$bldgrn\]\w\[$txtrst\] \$GAP\\n$ " 
 # export PS1="\w \[$txtcyn\][$git_branch]\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 # export PS1="\u@\h \w \[\$txtcyn\]\$git_branch\[\$txtred\]\$git_dirty\[\$txtrst\]\$ "
 
@@ -27,9 +28,11 @@ alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\  -f2"
 # alias ip="ipconfig getifaddr en0"
 
 alias profile="vim ~/.bash_profile"
+alias hosts="sudo vim /etc/hosts"
 alias pvim="nvim -u ~/dotfiles/nvim/php_init.vim"
 alias sc="source ~/.bash_profile"
 alias e="exit"
+alias c="clear"
 
 # Tmux Aliases
 alias tls="tmux ls"
@@ -43,8 +46,9 @@ alias gd="git diff"
 alias ga="git add"
 alias gap="git add -p"
 alias gaa="git add ."
-alias gc="git commit -m"
-alias gcm="git commit -m 'changes'"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gcmm="git commit -m 'changes'"
 # alias gp="git push origin"
 alias gch="git checkout"
 alias wip="git add . && git commit -m 'wip'"
