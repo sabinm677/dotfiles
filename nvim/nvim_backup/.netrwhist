@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/sabin/code/laravel/emr'
+let g:netrw_dirhist_0='/Users/sabin/code/laravel/emr/app/Services'
+let g:netrw_dirhist_9='/Users/sabin/code/laravel/emr/app'
+let g:netrw_dirhist_8='/Users/sabin/code/laravel/emr/app/Lib'
+let g:netrw_dirhist_7='/Users/sabin/code/laravel/emr/app'
+let g:netrw_dirhist_6='/Users/sabin/code/laravel/emr/app/Services'
+let g:netrw_dirhist_5='/Users/sabin/code/laravel/emr/app'
+let g:netrw_dirhist_4='/Users/sabin/code/laravel/emr'
+let g:netrw_dirhist_3='/Users/sabin/code/laravel/emr/app/Http/Controllers'
+let g:netrw_dirhist_2='/Users/sabin/code/angular/emr-ng'
