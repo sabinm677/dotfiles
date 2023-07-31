@@ -586,3 +586,5 @@ let g:coc_snippet_prev = '<S-TAB>'
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 
 " ----------------- / It works ---------------------
+
+set expandtab ts=4 sw=4
