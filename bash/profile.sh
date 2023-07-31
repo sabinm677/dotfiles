@@ -16,10 +16,6 @@ export PS1="\d \t \[$bldgrn\]\w\[$txtrst\] \$GAP\\n$ "
 # export PS1="\w \[$txtcyn\][$git_branch]\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 # export PS1="\u@\h \w \[\$txtcyn\]\$git_branch\[\$txtred\]\$git_dirty\[\$txtrst\]\$ "
 
-export GO111MODULE=on
-export PATH="$PATH:~/go/bin/wails"
-export PATH="$PATH:~/go/bin"
-export PATH="$PATH:/usr/local/go/bin"
 
 
 # Aliases
@@ -56,10 +52,10 @@ alias wip="git add . && git commit -m 'wip'"
 alias dev="git checkout develop"
 
 # PHP Aliases
-alias mms="php artisan make:migration:schema"
-alias dump="composer dump-autoload"
-alias phpunit="vendor/bin/phpunit"
-alias pf="phpunit --filter "
+# alias mms="php artisan make:migration:schema"
+# alias dump="composer dump-autoload"
+# alias phpunit="vendor/bin/phpunit"
+# alias pf="phpunit --filter "
 
 
 # Get DateTime
