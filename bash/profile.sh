@@ -1,13 +1,30 @@
+# Git Aware Prompt Repo:
+# https://github.com/sain2424/git-aware-prompt.git
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-  . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+# When git is installed by homebrew, 
+# there is file git-completion.bash in 
+#
+# Location: 
+# brew --prefix`/etc/bash_completion.d/git-completion.bash
+
+# Fix: brew command not found
+if [ -f `/opt/homebrew/bin/brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+  . `/opt/homebrew/bin/brew --prefix`/etc/bash_completion.d/git-completion.bash
   # Ref: https://stackoverflow.com/a/9869478
   # Add git completion aliases
   __git_complete g __git_main
   __git_complete gch _git_checkout
 fi
+
+# if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+  # . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+  # # Ref: https://stackoverflow.com/a/9869478
+  # # Add git completion aliases
+  # __git_complete g __git_main
+  # __git_complete gch _git_checkout
+# fi
 
 # export PS1="\w \$GAP\$ "
 
@@ -25,7 +42,8 @@ alias ip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\  -f2"
 
 alias profile="vim ~/.bash_profile"
 alias hosts="sudo vim /etc/hosts"
-alias pvim="nvim -u ~/dotfiles/nvim/php_init.vim"
+# use different config for nvim
+# alias pvim="nvim -u ~/dotfiles/nvim/php_init.vim"
 alias sc="source ~/.bash_profile"
 alias e="exit"
 alias c="clear"
@@ -62,3 +80,7 @@ alias dev="git checkout develop"
 dt() {
   echo "$(date +%Y%m%d%H%M%S)"
 }
+
+
+# Remove switch to zsh message in mac
+export BASH_SILENCE_DEPRECATION_WARNING=1
