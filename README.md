@@ -1,3 +1,5 @@
+# Heading 1
+## Heading 2
 ### Clone the Repo to home dir (optional)
 `git clone https://github.com/sabinm677/dotfiles`
 
