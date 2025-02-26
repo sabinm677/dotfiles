@@ -1,0 +1,26 @@
+[core]
+	excludesfile = /Users/sabin/.gitignore_global
+	autocrlf = input
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	publish = !git pull && git push
+	ch = !git checkout
+    current-remote = !git config branch.`git name-rev --name-only HEAD`.remote
+    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+    pr = !sh -c 'git fetch upstream merge-requests/$1/head:mr-upstream-$1 && git checkout mr-upstream-$1' -
+	history = log --pretty=format:\"%ad (%C(yellow)%H%Creset) | %Cgreen%s%Creset %Cred%d%Creset %Cblue[%an]\" --date=short
+    recheckout = !sh -c 'git branch -D $1 && git checkout -b $1' -
+	
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Sabin Maharjan
+	email = sabinm677@gmail.com
