@@ -1,0 +1,5 @@
+- Clone .tmux.conf
+- Clone theme
+  - `mkdir .tmux`
+  - `cd .tmux`
+  - `git clone https://github.com/odedlaz/tmux-onedark-theme`
