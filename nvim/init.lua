@@ -74,7 +74,12 @@ map("n", "<Leader>qq", ":q<CR>", opts)
 
 
 -- Telescope
-map("n", "ff", "<cmd>Telescope find_files<CR>", opts)
+vim.keymap.set("n", "ff", function()
+    vim.fn.system({ "git", "rev-parse", "--is-inside-work-tree" })
+    local picker = vim.v.shell_error == 0 and "git_files" or "find_files"
+    require("telescope.builtin")[picker]()
+end, opts)
+map("n", "<Leader>ff", "<cmd>Telescope find_files<CR>", opts)
 map("n", "<S-S>", "<cmd>Telescope find_files<CR>", opts)
 map("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
 map("n", "<Leader>fh", "<cmd>Telescope help_tags<CR>", opts)
@@ -119,6 +124,7 @@ Plug ('jwalton512/vim-blade')                  -- Blade highlightings
 
 Plug ('nvim-lua/plenary.nvim')
 Plug ('nvim-telescope/telescope.nvim')
+Plug ('preservim/nerdtree')
 
 vim.cmd [[
   Plug 'phpactor/phpactor', { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o' }
@@ -149,6 +155,7 @@ vim.call('plug#end')
 vim.g.phpactorEnabled = 1
 
 vim.cmd('source ' .. vim.fn.fnamemodify(debug.getinfo(1).source:sub(2), ":h") .. '/legacy.vim')
+map("n", "<C-b>", ":NERDTreeToggle<CR>", opts)
 -- vim.cmd('source legacy.vim')
 -- Color schemes should be loaded after plug#end().
 -- We prepend it with 'silent!' to ignore errors when it's not yet installed.

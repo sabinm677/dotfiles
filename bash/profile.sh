@@ -11,13 +11,13 @@ source "${GITAWAREPROMPT}/main.sh"
 
 # Fix: brew command not found
 # Enable For Mac
-# if [ -f `/opt/homebrew/bin/brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-#  . `/opt/homebrew/bin/brew --prefix`/etc/bash_completion.d/git-completion.bash
-#  # Ref: https://stackoverflow.com/a/9869478
-#  # Add git completion aliases
-#  __git_complete g __git_main
-#  __git_complete gch _git_checkout
-# fi
+if [ -f `/opt/homebrew/bin/brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+ . `/opt/homebrew/bin/brew --prefix`/etc/bash_completion.d/git-completion.bash
+ # Ref: https://stackoverflow.com/a/9869478
+ # Add git completion aliases
+ __git_complete g __git_main
+ __git_complete gch _git_checkout
+fi
 
 # if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
   # . `brew --prefix`/etc/bash_completion.d/git-completion.bash
